@@ -3,9 +3,10 @@ import './Dictionary.css';
 
 export default function Dictionary() {
   return (
-      <div className="UserProfile">
-        <div>Hello</div>  
-        <div>World</div>
-      </div>
-  );
+    <form>
+      <input type="search" placeholder="Search your word..." />
+      
+      <input type="submit" value="Search" />
+    </form>
+  )
 }
