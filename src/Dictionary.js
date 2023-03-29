@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './Dictionary.css';
+import Results from './Results';
 
 
 export default function Dictionary() {
@@ -23,10 +24,12 @@ function findSearchword(event) {
     
 }
   return (
+    <div className="Dictionary">
     <form onSubmit={searchAlert}>
       <input type="search" placeholder="Search your word..." onChange={findSearchword} />
       <input type="submit" value="Search" />
     </form>
-    
+    <Results results={results} />
+    </div>
   )
 }

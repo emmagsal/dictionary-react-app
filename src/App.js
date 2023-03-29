@@ -1,7 +1,7 @@
 
 import './App.css';
 import Dictionary from './Dictionary';
-import Results from './Results';
+
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <header className="App-header">Dictionary App
         </header>
         <Dictionary />
-        <Results />
+        
         <footer>Coded by Emma Salisbury</footer>
       </div>
     </div>
