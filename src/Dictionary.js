@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import './Dictionary.css';
 
+
 export default function Dictionary() {
     let [searchword, setSearchword] = useState("");
-
+    let [results, setResults] = useState({});
 function handleResponse(response) {
     console.log(response.data[0]);
+    setResults(response.data[0]);
 }
 
 function searchAlert(event) {
@@ -25,5 +27,6 @@ function findSearchword(event) {
       <input type="search" placeholder="Search your word..." onChange={findSearchword} />
       <input type="submit" value="Search" />
     </form>
+    
   )
 }
