@@ -1,0 +1,12 @@
+.Phonetic {
+    font-size: 20px;
+}
+.Phonetic a {
+    text-decoration: none;
+    
+}
+.Phonetic a:hover {
+    text-decoration: underline;
+    background-color: blanchedalmond;
+    color: white;
+}
