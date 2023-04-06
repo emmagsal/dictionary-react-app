@@ -14,7 +14,7 @@ function handleResponse(response) {
 
 function searchAlert(event) {
     event.preventDefault();
-    alert(`Searching for ${searchword}`);
+    
 
 let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchword}`;
 axios.get(apiUrl).then(handleResponse);
@@ -25,10 +25,12 @@ function findSearchword(event) {
 }
   return (
     <div className="Dictionary">
+      <section>
     <form onSubmit={searchAlert}>
       <input type="search" placeholder="Search your word..." onChange={findSearchword} />
       <input type="submit" value="Search" />
     </form>
+    </section>
     <Results results={results} />
     </div>
   )
