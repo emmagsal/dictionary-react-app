@@ -11,6 +11,14 @@ section {
   background-color: white;
   border-radius: 10px;
   margin-top: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+section h2 {
+  font-size: 40px;
+}
+section h3 {
+  font-size: 30px;
 }
 section h2, h3 {
   text-align: center;
