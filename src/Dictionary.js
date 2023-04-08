@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import './Dictionary.css';
 import Results from './Results';
+import Photos from './Photos';
 
 
 export default function Dictionary() {
     let [searchword, setSearchword] = useState("");
     let [results, setResults] = useState("");
+    let [photos, setPhotos] = useState("");
 
 function handleResponse(response) {
     console.log(response.data[0]);
@@ -14,6 +16,7 @@ function handleResponse(response) {
 }
 
 function handlePexelsResponse(response) {
+  setPhotos(response.data.photos);
 
 }
 function searchAlert(event) {
@@ -41,6 +44,7 @@ function findSearchword(event) {
     </form>
     </section>
     <Results results={results} />
+    <Photos photos={photos} />
     </div>
   )
 }
