@@ -7,17 +7,26 @@ import Results from './Results';
 export default function Dictionary() {
     let [searchword, setSearchword] = useState("");
     let [results, setResults] = useState("");
+
 function handleResponse(response) {
     console.log(response.data[0]);
     setResults(response.data[0]);
 }
 
+function handlePexelsResponse(response) {
+
+}
 function searchAlert(event) {
     event.preventDefault();
     
 
 let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchword}`;
 axios.get(apiUrl).then(handleResponse);
+
+let pexelsApiKey = "UxNktkMBFYaKDrmjsgO6yM7Ue3A2ytQy3lMfMj5xC8pzvyLyF2zWeJNG";
+let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchword}&per_page=1`;
+let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
 }
 function findSearchword(event) {
     setSearchword(event.target.value);
