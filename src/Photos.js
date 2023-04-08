@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 import "./Photos.css";
 
 export default function Photos(props) {
@@ -10,7 +10,7 @@ export default function Photos(props) {
                 {props.photos.map(function (photo, index) {
                     return (
                         <div key={index}>
-                    <img src={photo.src.landscape} className="img-fluid" />
+                    <img src={photo.src.landscape} className="img-fluid" alt="whoops" />
                     </div>
                     );
                 })}
