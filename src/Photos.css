@@ -1,0 +1,8 @@
+.Photos section.Photos .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+img {
+    max-width: 100%;
+}
