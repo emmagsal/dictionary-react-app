@@ -11,11 +11,10 @@ export default function Dictionary() {
     let [photos, setPhotos] = useState("");
 
 function handleResponse(response) {
-    console.log(response.data[0]);
     setResults(response.data[0]);
 }
 
-function handlePexelsResponse(response) {
+function handleImageResponse(response) {
   setPhotos(response.data.photos);
 
 }
@@ -26,10 +25,10 @@ function searchAlert(event) {
 let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchword}`;
 axios.get(apiUrl).then(handleResponse);
 
-let pexelsApiKey = "UxNktkMBFYaKDrmjsgO6yM7Ue3A2ytQy3lMfMj5xC8pzvyLyF2zWeJNG";
-let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchword}&per_page=1`;
-let headers = { Authorization: `Bearer ${pexelsApiKey}` };
-axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+let imageApiKey = "t47d63b183094ea0a0d9f3acff7fbo8d";
+let imageApiUrl = `https://api.shecodes.io/images/v1/search?query=${searchword}&key=${imageApiKey}`;
+
+axios.get(imageApiUrl).then(handleImageResponse);
 }
 function findSearchword(event) {
     setSearchword(event.target.value);
